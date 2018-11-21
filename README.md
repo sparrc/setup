@@ -30,13 +30,12 @@ Install bento4 in ~/ws/bento/bin/*
 
     - 1Password
     - VS Code
-    - iTerm (optional)
     - GPG Suite
     - Kaleidoscope (and ksdiff)
     - VirtualBox
     - Vagrant
 
-1. Tell iTerm to sync it's settings from ~/gd/appsync/iterm2
+1. Tell Terminal to sync it's settings from ~/gd/appsync/sparrc.terminal
 
 ## Instructions:
 
@@ -87,6 +86,8 @@ first press cmd+shift+P, then:
     to this:
 
         %admin  ALL=(ALL) NOPASSWD: ALL
+
+11. Get .secrets files from 1password and copy to home directory.
 
 
 ## gpg instructions:
