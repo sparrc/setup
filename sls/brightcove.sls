@@ -2,11 +2,6 @@
 {% set USER = salt['grains.item']('username')['username'] %}
 {% set HOME = "/Users/" + USER %}
 
-brightcoverc:
-  file.managed:
-    - name: {{ HOME }}/.brightcoverc
-    - source: salt://files/brightcoverc
-
 brew-packages:
   cmd.run:
     - name: brew install awscli
