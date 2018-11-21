@@ -1,0 +1,140 @@
+[
+  {
+    "name": "fabric-management-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-management-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-common",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-common",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-ingest-processor",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-ingest-processor",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-billing-aggregator",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/bolt-billing-aggregator",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-fastly",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/bolt-fastly",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-jit-2",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-jit-2",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-sources-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/bolt-sources-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-image-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-image-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-jit-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-jit-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-playback-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-playback-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-terminator",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-terminator",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-pmp4-proxy",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-pmp4-proxy",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-captionorigin",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-captionorigin",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "ddbsync",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/ddbsync",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-jaws-media-lib",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/bolt-jaws-media-lib",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-license-api",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/fabric-license-api",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-utils",
+    "rootPath": "$home/ws/repos/bolt-utils",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-e2e",
+    "rootPath": "$home/ws/repos/bolt-e2e",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-infrastructure",
+    "rootPath": "$home/ws/repos/bolt-infrastructure",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-monitoring",
+    "rootPath": "$home/ws/repos/bolt-monitoring",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "fabric-config",
+    "rootPath": "$home/ws/repos/fabric-config",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "bolt-palantir",
+    "rootPath": "$home/ws/go/src/github.com/zencoder/bolt-palantir",
+    "paths": [],
+    "group": ""
+  }
+]

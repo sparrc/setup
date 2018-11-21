@@ -1,0 +1,63 @@
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "diffEditor.renderSideBySide": false,
+  "explorer.openEditors.visible": 0,
+  "explorer.autoReveal": false,
+  "git.autofetch": false,
+  "git.enabled": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.roundedSelection": true,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.renderWhitespace": "none",
+  "editor.folding": true,
+  "editor.selectionHighlight": true,
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 19,
+  "editor.quickSuggestions": true,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.stablePeek": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.sls": "yaml"
+  },
+  "go.buildOnSave": "off",
+  "go.lintOnSave": "off",
+  "go.vetOnSave": "workspace",
+  "go.buildTags": "",
+  "go.buildFlags": [],
+  "go.lintFlags": [],
+  "go.vetFlags": [],
+  "go.coverOnSave": false,
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.formatTool": "goimports",
+  "go.gopath": "/Users/sparrc/ws/go",
+  "go.gocodeAutoBuild": true,
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": false
+  },
+  "workbench.colorTheme": "Afterglow",
+  "terminal.integrated.fontSize": 14,
+  "window.title": "${rootName}",
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+  "python.formatting.provider": "black",
+  "python.linting.enabled": false,
+  "python.disablePromptForFeatures": [
+    "pylint"
+  ],
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/*.pyc": true
+  },
+  "workbench.iconTheme": "vs-seti",
+  "window.zoomLevel": -0.25,
+  "editor.minimap.enabled": false
+}
+

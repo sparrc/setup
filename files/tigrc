@@ -1,0 +1,1 @@
+set main-view = id:yes author:abbreviated date:default commit-title:yes,graph,refs,overflow=no

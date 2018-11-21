@@ -1,0 +1,7 @@
+Host *
+  Compression yes
+  UseKeychain yes
+  AddKeysToAgent yes
+  ServerAliveInterval 120
+  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/brightcove-bolt-master.pem

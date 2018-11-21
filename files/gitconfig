@@ -1,0 +1,39 @@
+[user]
+	email = cameronsparr@gmail.com
+	name = Cameron Sparr
+	signingkey = DCB25D0F
+[branch]
+	autosetuprebase = always
+[merge]
+	tool = ksdiff
+[mergetool "ksdiff"]
+	cmd = "ksdiff --merge --output $MERGED --base $BASE -- $LOCAL $REMOTE"
+	prompt = false
+[pull]
+	rebase = true
+[grep]
+	lineNumber = true
+[core]
+	editor = nvim
+[push]
+	default = simple
+[log]
+	decorate = full
+	abbrevCommit = true
+[alias]
+	pohm = push origin HEAD:master
+	publish = push -u origin HEAD
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	outgoing = diff origin/master..HEAD
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
