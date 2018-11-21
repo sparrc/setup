@@ -35,15 +35,6 @@ config:
     - name: {{ HOME }}/.config
     - makedirs: true
 
-# if this fails for permissions, try running:
-#   sudo chown -R sparrc:staff ~/.config/htop
-htoprc:
-  file.managed:
-    - name: {{ HOME }}/.config/htop/htoprc
-    - source: salt://files/htoprc
-    - require:
-      - file: config
-
 tigrc:
   file.managed:
     - name: {{ HOME }}/.tigrc
