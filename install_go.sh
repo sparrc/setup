@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-version="$1"
+version="${1:-}"
+
+if [[ "$version" == "" ]]; then
+    echo "Usage:"
+    echo "  ./install_go.sh VERSION"
+    exit 0
+fi
+
 installed=$(go version)
 
 if echo "$installed" | grep "$version"; then
@@ -16,7 +23,7 @@ else
     rm -rf $GOPATH/pkg
 
     open "/tmp/go.pkg"
-    echo "Installed successfully, recommended steps:"
+    echo "Installed successfully, recommended next steps:"
     echo "  Install glide: go get github.com/Masterminds/glide"
     echo "  Run 'Go: Install/Update tools' in VSCode"
 fi
