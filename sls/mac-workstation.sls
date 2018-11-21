@@ -8,12 +8,6 @@ include:
 # FILES:
 #####################
 
-# this enables Ctrl-r reverse searching
-editrc:
-  file.managed:
-    - name: {{ HOME }}/.editrc
-    - source: salt://files/editrc
-
 # custom jq functions:
 jq:
   file.managed:
