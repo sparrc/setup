@@ -65,7 +65,6 @@ Install bento4 in ~/ws/bento/bin/*
 package and then install these:
 
         Theme - Afterglow
-        GoSublime
 
 9. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go)
 and install extensions & shell command:

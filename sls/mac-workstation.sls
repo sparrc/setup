@@ -181,20 +181,10 @@ zshrc:
 {% set SUBLIME_DIR = (HOME + "/Library/Application Support/Sublime Text 3/"
                       "Packages/User") %}
 
-sublime-keymap:
-  file.managed:
-    - name: {{ SUBLIME_DIR }}/Default (OSX).sublime-keymap
-    - source: salt://files/Default-OSX.sublime-keymap
-
 sublime-preferences:
   file.managed:
     - name: {{ SUBLIME_DIR }}/Preferences.sublime-settings
     - source: salt://files/Preferences.sublime-settings
-
-go-sublime-preferences:
-  file.managed:
-    - name: {{ SUBLIME_DIR }}/GoSublime.sublime-settings
-    - source: salt://files/GoSublime.sublime-settings
 
 /usr/local/bin/subl:
   file.symlink:

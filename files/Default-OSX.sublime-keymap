@@ -1,7 +1,0 @@
-[
-    { "keys": ["end"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-    { "keys": ["home"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
-    { "keys": ["super+b"], "command": "toggle_side_bar" }
-]
