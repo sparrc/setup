@@ -224,6 +224,7 @@ cookbook:
   git.latest:
     - name: git@github.com:sparrc/cookbook.git
     - target: {{ HOME }}/ws/repos/cookbook
+    - branch: master
     - require:
       - file: repositories
 
