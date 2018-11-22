@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-version="${1:-}"
+version=$(echo "${1:-}" | tr -d '[:space:]')
 
 if [[ "$version" == "" ]]; then
     echo "Usage:"
@@ -9,9 +9,9 @@ if [[ "$version" == "" ]]; then
     exit 0
 fi
 
-installed=$(go version)
+installed=$(go version | sed 's/go version go//g' | sed 's/darwin\/amd64//g' | tr -d '[:space:]')
 
-if echo "$installed" | grep "$version"; then
+if [[ "$installed" == "$version" ]]; then
     echo "Go version $version is already installed."
     exit 0
 else
