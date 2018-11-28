@@ -45,6 +45,7 @@
   },
   "workbench.colorTheme": "Afterglow",
   "terminal.integrated.fontSize": 14,
+  "terminal.integrated.shell.osx": "/bin/bash",
   "window.title": "${rootName}",
   "projectManager.openInNewWindowWhenClickingInStatusBar": true,
   "python.formatting.provider": "black",

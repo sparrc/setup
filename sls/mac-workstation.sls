@@ -8,10 +8,10 @@ include:
 # FILES:
 #####################
 
-profile:
+rc:
   file.managed:
-    - name: {{ HOME }}/.profile
-    - source: salt://files/profile
+    - name: {{ HOME }}/.rc
+    - source: salt://files/rc
 
 # custom jq functions:
 jq:
@@ -24,10 +24,10 @@ warprc:
     - name: {{ HOME }}/.warprc
     - source: salt://files/warprc
 
-bashrc:
+bash_profile:
   file.managed:
-    - name: {{ HOME }}/.bashrc
-    - source: salt://files/bashrc
+    - name: {{ HOME }}/.bash_profile
+    - source: salt://files/bash_profile
 
 config:
   file.directory:

@@ -26,18 +26,20 @@ bindkey '\e[B' history-beginning-search-forward
 # prompt format
 PROMPT="%{$fg[blue]%}%4~ %{$fg_bold[red]%}%# %{$reset_color%}%{$fg[white]%}"
 
-HISTFILE=~/.zsh_history         # where to store zsh config
-HISTSIZE=7500                   # lines of history to keep in mem
-SAVEHIST=100000                 # lines of history to save to file
-setopt append_history           # append
-setopt hist_ignore_all_dups     # no duplicate
-unsetopt hist_ignore_space      # ignore space prefixed commands
-setopt hist_reduce_blanks       # trim blanks
-setopt share_history            # share hist between sessions
-setopt bang_hist                # !keyword
+HISTFILE=~/.zsh_history                            # where to store zsh config
+HISTSIZE=7500                                      # lines of history to keep in mem
+SAVEHIST=100000                                    # lines of history to save to file
+HISTORY_IGNORE="(history|ls|pwd|exit|ll|la|clear)" # commands history ignores
 
-# General shell settings:
-source ~/.profile
+setopt APPEND_HISTORY           # append
+setopt HIST_IGNORE_ALL_DUPS     # no duplicate
+setopt HIST_REDUCE_BLANKS       # trim blanks
+setopt SHARE_HISTORY            # share hist between sessions
+setopt BANG_HIST                # !keyword
+unsetopt HIST_IGNORE_SPACE      # ignore space prefixed commands
+
+# Cross-shell settings:
+source ~/.rc
 
 # Brightcove:
 source ~/.brightcoverc

@@ -11,18 +11,15 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# keep more history
-export HISTFILESIZE=100000
-export HISTSIZE=9999
 shopt -s histappend
-# Ignore duplicates, ls without options and builtin commands
-export HISTCONTROL=ignoredups
+export HISTFILESIZE=100000
+export HISTSIZE=7500
+export HISTCONTROL=ignoredups # Ignore duplicates, ls without options and builtin commands
 export HISTIGNORE="history:ls:pwd:exit:ll:la:clear"
-# Timestamp the history entries
-export HISTTIMEFORMAT="%b %d %R "
+export HISTTIMEFORMAT="%b %d %R " # Timestamp the history entries
 
-# General shell settings:
-source ~/.profile
+# Cross-shell settings:
+source ~/.rc
 
 # Brightcove:
 source ~/.brightcoverc
