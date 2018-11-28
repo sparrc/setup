@@ -28,15 +28,21 @@ PROMPT="%{$fg[blue]%}%4~ %{$fg_bold[red]%}%# %{$reset_color%}%{$fg[white]%}"
 
 HISTFILE=~/.zsh_history                            # where to store zsh config
 HISTSIZE=7500                                      # lines of history to keep in mem
-SAVEHIST=100000                                    # lines of history to save to file
+SAVEHIST=30000                                     # lines of history to save to file
 HISTORY_IGNORE="(history|ls|pwd|exit|ll|la|clear)" # commands history ignores
 
 setopt APPEND_HISTORY           # append
+setopt HIST_IGNORE_DUPS         # no duplicate
 setopt HIST_IGNORE_ALL_DUPS     # no duplicate
 setopt HIST_REDUCE_BLANKS       # trim blanks
 setopt SHARE_HISTORY            # share hist between sessions
+setopt HIST_IGNORE_SPACE        # ignore commands prefixed by a space
+setopt HIST_NO_STORE            # dont store dupes
 setopt BANG_HIST                # !keyword
-unsetopt HIST_IGNORE_SPACE      # ignore space prefixed commands
+setopt NO_BEEP                  # no terminal beeps
+setopt HIST_SAVE_NO_DUPS        # more de-duping
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 
 # Cross-shell settings:
 source ~/.rc
