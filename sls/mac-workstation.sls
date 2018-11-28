@@ -154,13 +154,8 @@ nvimrc:
       - file: nvim-config
 
 #####################
-# OH MY ZSH!:
+# ZSH:
 #####################
-
-oh-my-zsh:
-  git.latest:
-    - name: https://github.com/sparrc/oh-my-zsh.git
-    - target: {{ HOME }}/.oh-my-zsh
 
 zshrc:
   file.managed:
