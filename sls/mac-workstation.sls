@@ -8,6 +8,11 @@ include:
 # FILES:
 #####################
 
+profile:
+  file.managed:
+    - name: {{ HOME }}/.profile
+    - source: salt://files/profile
+
 # custom jq functions:
 jq:
   file.managed:
@@ -214,6 +219,14 @@ gopath:
 #####################
 # GIT REPOS
 #####################
+
+wd:
+  git.latest:
+    - name: git@github.com:mfaerevaag/wd.git
+    - target: {{ HOME }}/ws/repos/wd
+    - branch: master
+    - require:
+      - file: repositories
 
 cookbook:
   git.latest:

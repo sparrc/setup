@@ -3,72 +3,29 @@
 # for examples
 force_color_prompt=yes
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-#
-# Personal preferences:
-#
-
-
-export EDITOR=vim
-alias df='df -h'
-# ls aliases
-alias ls='ls -h --color'
-alias ll='ls -lv --group-directories-first'
-alias la='ll -a'
-
-# -R tells less to color the ANSI color escape sequences in output
-alias less='less -R'
-
-# Color working directory blue, prompt char red, and git branch green
-PS1='\u:\[\e[1;34m\]\w\[\e[0m\] \[\e[0;32m\]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
-
-# Always show color with grep
-export GREP_OPTIONS='--color=auto'
+# Color working directory blue, prompt char red
+PS1='\[\e[34m\]\w\[\e[0m\] \[\e[0;32m\]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
 
 # use bash completion if available:
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-#
-# Keep more history
-#
-
+# keep more history
 export HISTFILESIZE=100000
 export HISTSIZE=9999
 shopt -s histappend
-# Combine multiline commands into one in history
-shopt -s cmdhist
 # Ignore duplicates, ls without options and builtin commands
 export HISTCONTROL=ignoredups
 export HISTIGNORE="history:ls:pwd:exit:ll:la:clear"
 # Timestamp the history entries
 export HISTTIMEFORMAT="%b %d %R "
 
-#
-# GIT
-#
-
-alias gs='git status'
-alias gd='git diff'
-alias gba='git branch -a'
-alias gl='git log --oneline --decorate'
-alias gc='git checkout'
-alias grev='git review'
-alias gup='git remote update; git checkout master; git pull origin master'
-# gup command for working with repos that are setup for working out of a 'develop' branch.
-alias dgup='git remote update; git checkout develop; git pull origin develop'
-alias gout='git log master..'
+# General shell settings:
+source ~/.profile
 
 # Brightcove:
 source ~/.brightcoverc
+
+# Secrets:
+source ~/.secrets

@@ -1,14 +1,20 @@
-autoload -Uz compinit promptinit
-compinit   # autocomplete
-promptinit # prompt
-
-export PATH="$HOME/gd/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
-# This will remove duplicate entries from PATH:
-typeset -U PATH
-
 #
 # ZSH Setup
 #
+
+# warp directory (https://github.com/mfaerevaag/wd)
+wd () {
+    . $HOME/ws/repos/wd/wd.sh
+}
+# warp directory completions:
+fpath=($HOME/ws/repos/wd $fpath)
+
+autoload -Uz compinit colors
+compinit -u     # autocomplete
+colors          # colors
+typeset -U PATH # no dupes in PATH
+
+export PATH="$HOME/gd/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 
 # completion
 zstyle ':completion:*' menu select
@@ -17,8 +23,8 @@ setopt COMPLETE_ALIASES
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
-# prompt
-PROMPT='%F{blue}%4~%f %# '
+# prompt format
+PROMPT="%{$fg[blue]%}%4~ %{$fg_bold[red]%}%# %{$reset_color%}%{$fg[white]%}"
 
 HISTFILE=~/.zsh_history         # where to store zsh config
 HISTSIZE=7500                   # lines of history to keep in mem
@@ -30,163 +36,8 @@ setopt hist_reduce_blanks       # trim blanks
 setopt share_history            # share hist between sessions
 setopt bang_hist                # !keyword
 
-#
-# GIT
-#
-
-alias g='git'
-# print the github URL of the current repo
-gh () {
-    url=$(git remote -v | grep origin | head -n 1 | awk '{ print $2 }')
-    if [[ "$url" =~ "git@github" ]]; then
-        echo "$url" | sed 's/^git@github.com:/https:\/\/github.com\//g' | sed 's/\.git$//g'
-    else
-        echo "$url"
-    fi
-}
-# pipe the git diff to color diff for nicer viewing
-alias gd='git diff | colordiff'
-# displays the current HEAD commit
-alias gv='git rev-parse HEAD'
-# see difference between local HEAD and origin master
-alias outgoing='git diff origin/master..HEAD | colordiff'
-# displays a 'short' one-line status
-alias gs='git status --short'
-# show all branches
-alias gb='git rev-parse --abbrev-ref HEAD'
-alias gba='git branch --all'
-alias gc='git checkout'
-# amends a change to previous commit
-alias fixup='git status && git commit --all --amend --reuse-message=HEAD'
-# update remotes, checkout master, pull origin onto the master branch
-alias gu='git fetch --all --prune &&
-          git checkout master &&
-          git pull origin master --tags &&
-          git checkout -'
-# gup command for working out of a 'develop' branch
-alias dgu='git fetch --all --prune &&
-           git checkout develop &&
-           git pull origin develop --tags &&
-           git checkout -'
-# shell function to destroy local and remote branch references
-blam () {
-    echo "git branch -D $1"
-    git branch -D $1
-    echo "git push origin --delete $1"
-    git push origin --delete $1
-}
-blamtag () {
-    git tag -d $1
-    git push origin :refs/tags/$1
-}
-delete-current-branch () {
-    branch=$(git rev-parse --abbrev-ref HEAD)
-    printf "Delete local and remote copies of branch: [$branch] (y/n)? "
-    read resp
-    if [[ "$resp" == "y" && "$branch" != "master" ]]; then
-        git checkout master
-        blam "$branch"
-    else
-        echo "Not Deleting"
-    fi
-    gu
-}
-
-#
-# Personal preferences:
-#
-
-export EDITOR=nvim
-export BROWSER=firefox
-
-alias df='df -h'
-alias vim='nvim'
-alias tree='tree -C'
-# default to colored unified diffs
-alias diff='colordiff --unified'
-# Always show color with grep
-alias grep='grep --color=auto'
-# ls aliases
-alias ls='ls -Fh --color'
-alias ll='ls -lvH --group-directories-first'
-alias la='ll -a'
-alias l='ll'
-# Lookup IP address in RADB
-alias radb='whois -m'
-# Get UTC rfc 3339 timestamp
-alias utc='date --utc +%FT%TZ'
-# Use pigz (parallel gzip) by default
-alias gzip='pigz'
-export TAR_OPTIONS="--use-compress-program=pigz"
-
-alias shrug='echo "¯\_(ツ)_/¯"'
-alias flip-table='echo "(╯°□°）╯︵ ┻━┻"'
-alias flip-two-tables='echo "┻━┻︵ \(°□°)/ ︵┻━┻"'
-
-# Quickly generates 1 GB of random data taking advantage of openssl salted encryption
-alias randomdata='dd if=/dev/zero bs=1M count=1k 2>/dev/null | openssl enc -rc4-40 -pass pass:weak'
-
-# GPG encrypt and decrypt helper functions:
-encrypt () {
-    gpg --output "$1.gpg" --encrypt --recipient cameronsparr@gmail.com "$1"
-}
-decrypt () {
-    s=$(echo "$1" | sed "s/.gpg$//")
-    gpg --output "$s" --decrypt "$1"
-}
-
-# applies default jq formatting to given file
-jq-format () {
-    TMP=$(jq . < "$1"); echo "$TMP" > "$1"
-}
-
-# wk finds a directory with the given name
-wk () {
-    for d in $(echo "$HOME/ws/go/src $HOME/ws $HOME/gd/ws"); do
-        m=$(find $d -maxdepth 3 -type d | grep "/${1}$")
-        if [[ "$m" != "" ]]; then
-            cd "$m"
-            return
-        fi
-    done
-    echo "Project $1 not found"
-}
-
-# python setup
-eval "$(pyenv init -)"
-
-# ruby setup
-eval "$(rbenv init -)"
-
-# Uninstalls all ruby gems for all rbenv versions
-ruby-uninstall-all-gems () {
-  for ruby in $(rbenv versions --bare); do
-    echo "---------------------------------------"
-    echo "$ruby"
-    rbenv shell "$ruby"
-    for gem in $(gem list --no-versions); do
-      gem uninstall "$gem" -aIx
-    done
-  done
-}
-
-ruby-reinstall-all-versions () {
-  for ruby in $(rbenv versions --bare); do
-    echo "---------------------------------------"
-    echo "$ruby"
-    rbenv uninstall "$ruby"
-    rbenv install "$ruby"
-  done
-}
-
-# GO:
-export GOPATH="$HOME/ws/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$PATH"
-
-# Prepend gnubin path for replacing BSD utils with GNU utils and local gem dir
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# General shell settings:
+source ~/.profile
 
 # Brightcove:
 source ~/.brightcoverc
