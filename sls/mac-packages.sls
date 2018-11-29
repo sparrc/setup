@@ -7,7 +7,7 @@
 {% set BREW_PKGS = ("git wget tig coreutils zsh cowsay sl unp
                      ripgrep jq rpl neovim colordiff rbenv tree
                      speedtest_cli shellcheck lolcat pigz pyenv
-                     youtube-dl")
+                     youtube-dl bash-completion")
 %}
 
 # These packages will overwrite the default Mac OSX utilities:

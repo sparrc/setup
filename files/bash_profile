@@ -1,15 +1,30 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-force_color_prompt=yes
+/* vim: set filetype=sh : */
 
-# Color working directory blue, prompt char red
-PS1='\[\e[34m\]\w\[\e[0m\] \[\e[0;32m\]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
+force_color_prompt=yes
 
 # use bash completion if available:
 if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    . /etc/bash_completion # most linux distros have this by default
 fi
+if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion # this is where homebrew on macos installs it.
+fi
+
+# Basic prompt:
+basic_prompt () {
+    export PS1='\[\e[34m\]\w\[\e[0m\] \[\e[0;32m\]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
+}
+# Fancy prompt:
+fancy_prompt () {
+    local _green="\[\e[32m\]"
+    local _red="\[\e[31m\]"
+    local _reset_color="\[\e[00m\]"
+    local _pwd="\[\e[01;34m\]\w"
+    local _git_branch='`if [ -d ".git" ]; then printf " "; git rev-parse --abbrev-ref HEAD; fi`'
+    local _git_changes='`if [ -d ".git" ]; then git diff-index --quiet HEAD -- || echo "*"; fi`'
+    export PS1="$_pwd$_green$_git_branch$_red$_git_changes \$ $_reset_color"
+}
+fancy_prompt
 
 shopt -s histappend
 export HISTFILESIZE=100000
