@@ -1,4 +1,4 @@
-/* vim: set filetype=sh : */
+# vim: set filetype=sh :
 
 force_color_prompt=yes
 
