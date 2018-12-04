@@ -14,15 +14,21 @@ fi
 basic_prompt () {
     export PS1='\[\e[34m\]\w\[\e[0m\] \[\e[0;32m\]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
 }
+gstat () {
+    local _red="\e[31m"
+    local _green="\e[32m"
+    local b=`git rev-parse --abbrev-ref HEAD`
+    local s=`git diff-index --quiet HEAD -- || echo "*"`
+    printf " ${_green}%s${_red}%s" "$b" "$s"
+}
 # Fancy prompt:
 fancy_prompt () {
     local _green="\[\e[32m\]"
     local _red="\[\e[31m\]"
     local _reset_color="\[\e[00m\]"
     local _pwd="\[\e[01;34m\]\w"
-    local _git_branch='`if [ -d ".git" ]; then printf " "; git rev-parse --abbrev-ref HEAD; fi`'
-    local _git_changes='`if [ -d ".git" ]; then git diff-index --quiet HEAD -- || echo "*"; fi`'
-    export PS1="$_pwd$_green$_git_branch$_red$_git_changes \$ $_reset_color"
+    local _gstat='`if test -d ".git"; then gstat; fi`'
+    export PS1="$_pwd$_gstat $_red\$ $_reset_color"
 }
 fancy_prompt
 
