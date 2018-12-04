@@ -64,6 +64,7 @@ export EDITOR=nvim
 export BROWSER=firefox
 
 alias df='df -h'
+alias rg='rg --no-heading'
 alias vim='nvim'
 alias tree='tree -C'
 # default to colored unified diffs
