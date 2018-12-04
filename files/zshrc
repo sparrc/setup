@@ -11,7 +11,7 @@ wd () {
 # warp directory completions:
 fpath=($HOME/ws/repos/wd $fpath)
 
-autoload -Uz compinit colors
+autoload -Uz compinit colors add-zsh-hook
 compinit -u     # autocomplete
 colors          # colors
 typeset -U PATH # no dupes in PATH
@@ -25,8 +25,20 @@ setopt COMPLETE_ALIASES
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
+gstat () {
+    if test -d ".git"; then
+        psvar[1]=" `git rev-parse --abbrev-ref HEAD`"
+        psvar[2]=`git diff-index --quiet HEAD -- || echo "*"`
+    else
+        psvar[1]=""
+        psvar[2]=""
+    fi
+}
+# get git meta-information periodically, every 1s
+PERIOD=1
+add-zsh-hook periodic gstat
 # prompt format
-PROMPT="%{$fg[blue]%}%4~ %{$fg_bold[red]%}%# %{$reset_color%}%{$fg[white]%}"
+PROMPT="%{$fg[blue]%}%4~%{$fg[green]%}%1v%{$fg[red]%}%2v%{$fg_bold[red]%} %# %{$reset_color%}"
 
 HISTFILE=~/.zsh_history                            # where to store zsh config
 HISTSIZE=7500                                      # lines of history to keep in mem
