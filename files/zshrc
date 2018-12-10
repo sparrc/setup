@@ -51,7 +51,7 @@ setopt HIST_SAVE_NO_DUPS        # more de-duping
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt INTERACTIVECOMMENTS      # recognize comments on cli
-setopt COMPLETE_ALIASES
+setopt NO_COMPLETE_ALIASES      # autocomplete aliases, this seems to do the opposite of what it sounds like
 
 # completion
 zstyle ':completion:*' menu select
