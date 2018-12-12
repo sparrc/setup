@@ -10,6 +10,10 @@ wd () {
 }
 # warp directory completions:
 fpath=($HOME/ws/repos/wd $fpath)
+# zsh completions from homebrew:
+if [ -d /usr/local/share/zsh/site-functions ]; then
+    . /usr/local/share/zsh/site-functions
+fi
 
 autoload -Uz compinit colors add-zsh-hook
 compinit -u     # autocomplete
