@@ -102,7 +102,12 @@ decrypt () {
 
 # applies default jq formatting to given file
 jq-format () {
-    TMP=$(jq . < "$1"); echo "$TMP" > "$1"
+    TMP=$(jq . < "$1")
+    if [[ "$?" != "0" ]]; then
+        echo "Error parsing json: $1"
+        return
+    fi
+    echo "$TMP" > "$1"
 }
 
 # wk finds a directory with the given name
