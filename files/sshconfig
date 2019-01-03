@@ -4,5 +4,3 @@ Host *
   AddKeysToAgent yes
   ServerAliveInterval 120
   IdentityFile ~/.ssh/id_rsa
-  IdentityFile ~/.ssh/brightcove-bolt-master.pem
-  IdentityFile ~/.ssh/brightcove-master-2018.pem

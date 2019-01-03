@@ -67,8 +67,5 @@ bindkey '\e[3~' delete-char # 'forward' delete key
 # Cross-shell settings:
 source ~/.rc
 
-# Brightcove:
-source ~/.brightcoverc
-
 # Secrets:
 source ~/.secrets

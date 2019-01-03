@@ -1,5 +1,5 @@
 
-default: brew salt salt-brightcove ruby python go
+default: brew salt ruby python go
 
 brew:
 	brew update
@@ -7,9 +7,6 @@ brew:
 
 salt:
 	salt-call --config-dir=./config state.sls sls.mac-workstation
-
-salt-brightcove:
-	salt-call --config-dir=./config state.sls sls.brightcove
 
 go:
 	./install_go.sh 1.11.2

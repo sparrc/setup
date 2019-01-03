@@ -42,8 +42,5 @@ export HISTTIMEFORMAT="%b %d %R " # Timestamp the history entries
 # Cross-shell settings:
 source ~/.rc
 
-# Brightcove:
-source ~/.brightcoverc
-
 # Secrets:
 source ~/.secrets
