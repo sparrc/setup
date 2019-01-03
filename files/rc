@@ -90,6 +90,10 @@ alias flip-two-tables='echo "┻━┻︵ \(°□°)/ ︵┻━┻"'
 
 # Quickly generates 1 GB of random data taking advantage of openssl salted encryption
 alias randomdata='dd if=/dev/zero bs=1M count=1k 2>/dev/null | openssl enc -rc4-40 -pass pass:weak'
+pwgen () {
+    length="${1:-25}"
+    head -c300 /dev/urandom | tr -dc 'A-Za-z0-9\.\?\-\_\!\$' | head -c "$length" | tee | pbcopy
+}
 
 # GPG encrypt and decrypt helper functions:
 encrypt () {
