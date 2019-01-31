@@ -19,11 +19,6 @@ jq:
     - name: {{ HOME }}/.jq
     - source: salt://files/jq
 
-warprc:
-  file.managed:
-    - name: {{ HOME }}/.warprc
-    - source: salt://files/warprc
-
 bash_profile:
   file.managed:
     - name: {{ HOME }}/.bash_profile
