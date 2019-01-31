@@ -17,6 +17,7 @@
     lineNumber = true
 [core]
     editor = nvim
+    pager = less -FMRiX
 [push]
     default = simple
 [log]
@@ -26,14 +27,15 @@
     pohm = push origin HEAD:master
     publish = push -u origin HEAD
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    outgoing = diff origin/master..HEAD
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [commit]
     gpgsign = true
 [tag]
     gpgsign = true
 [url "git@github.com:"]
     insteadOf = https://github.com/
-
+[color]
+    ui = auto
 [filter "lfs"]
     required = true
     clean = git-lfs clean -- %f

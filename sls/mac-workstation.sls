@@ -50,7 +50,7 @@ gitignore:
       - file: config
 
 sshconfig:
-  file.managed:
+  file.prepend:
     - makedirs: true
     - name: {{ HOME }}/.ssh/config
     - source: salt://files/sshconfig
