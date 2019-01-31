@@ -37,7 +37,6 @@
   "go.coverOnSave": false,
   "go.useCodeSnippetsOnFunctionSuggest": true,
   "go.formatTool": "goimports",
-  "go.gopath": "/Users/sparrc/ws/go",
   "go.gocodeAutoBuild": true,
   "go.enableCodeLens": {
     "references": false,
