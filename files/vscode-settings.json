@@ -7,7 +7,7 @@
   "git.autofetch": false,
   "git.enabled": true,
   "editor.rulers": [
-    80
+    80, 120
   ],
   "editor.roundedSelection": true,
   "editor.wordWrap": "on",
@@ -46,12 +46,9 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.shell.osx": "/bin/bash",
   "window.title": "${rootName}",
-  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
   "python.formatting.provider": "black",
   "python.linting.enabled": false,
-  "python.disablePromptForFeatures": [
-    "pylint"
-  ],
+  "python.formatting.blackArgs": ["--line-length", "120"],
   "files.insertFinalNewline": true,
   "files.exclude": {
     "**/*.pyc": true

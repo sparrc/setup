@@ -26,7 +26,7 @@ python:
 	pip install -q --upgrade pip
 	pip install -q --upgrade ipython
 	pip install -q --upgrade yapf
-	pyenv global 3.7.1
+	pyenv global 3.7.2
 	pip install -q --upgrade pip
 	pip install -q --upgrade ipython
 	pip install -q --upgrade black
