@@ -158,7 +158,7 @@ nvimrc:
 #####################
 
 zshrc:
-  file.prepend:
+  file.managed:
     - name: {{ HOME }}/.zshrc
     - source: salt://files/zshrc
 

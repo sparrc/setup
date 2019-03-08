@@ -44,3 +44,6 @@ source ~/.rc
 
 # Secrets:
 source ~/.secrets
+
+# Amazon-specific things
+source ~/.amazonrc

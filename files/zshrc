@@ -69,3 +69,6 @@ source ~/.rc
 
 # Secrets:
 source ~/.secrets
+
+# Amazon:
+source ~/.amazonrc
