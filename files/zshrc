@@ -35,7 +35,7 @@ gstat () {
 PERIOD=1
 add-zsh-hook periodic gstat
 # prompt format
-PROMPT="%{$fg[blue]%}%4~%{$fg[green]%}%1v%{$fg[red]%}%2v%{$fg_bold[red]%} %# %{$reset_color%}"
+PROMPT="%{$fg[blue]%}%4d%{$fg[green]%}%1v%{$fg[red]%}%2v%{$fg_bold[red]%} %# %{$reset_color%}"
 
 HISTFILE=~/.zsh_history                            # where to store zsh config
 HISTSIZE=7500                                      # lines of history to keep in mem
