@@ -1,7 +1,9 @@
 [user]
     email = cameronsparr@gmail.com
-    name = Cameron Sparr
+    name = Cam
     signingkey = DCB25D0F
+[includeIf "gitdir:~/ws/amzn/**"]
+    path = ~/ws/amzn/.gitconfig
 [branch]
     autosetuprebase = always
 [merge]
