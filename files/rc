@@ -153,6 +153,12 @@ ruby-reinstall-all-versions () {
   done
 }
 
+epoch-converter () {
+    seconds=$(echo "${1}" | head -c10)
+    date -d "@${seconds}" "+%F %T %Z" --utc
+    date -d "@${seconds}" "+%F %T %Z"
+}
+
 # GO:
 export GOPATH="$HOME/ws/go"
 export GOBIN="$GOPATH/bin"
