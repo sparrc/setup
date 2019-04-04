@@ -92,6 +92,19 @@ pathogen-bundle-dir:
     - require:
       - git: pathogen
 
+vim-colors-dir:
+  file.directory:
+    - name: {{ HOME }}/.vim/colors
+    - require:
+      - git: pathogen
+
+vim-solarized-color:
+  file.managed:
+    - name: {{ HOME }}/.vim/colors/Solarized.vim
+    - source: salt://files/Solarized.vim
+    - require:
+      - file: vim-colors-dir
+
 vim-go:
   git.latest:
     - name: https://github.com/fatih/vim-go
@@ -118,13 +131,6 @@ vim-gitgutter:
   git.latest:
     - name: https://github.com/airblade/vim-gitgutter
     - target: {{ HOME }}/.vim/bundle/vim-gitgutter
-    - require:
-      - file: pathogen-bundle-dir
-
-vim-colorschemes:
-  git.latest:
-    - name: https://github.com/sparrc/vim-colorschemes
-    - target: {{ HOME }}/.vim/bundle/vim-colorschemes
     - require:
       - file: pathogen-bundle-dir
 

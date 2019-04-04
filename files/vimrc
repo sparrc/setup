@@ -19,7 +19,9 @@ nnoremap <CR> :noh<CR><CR>
 set showmatch
 " Highlight syntax
 syntax on
-colorscheme marutaro
+" Use Solarized colorscheme, but change color of comments to gray
+colorscheme Solarized
+hi Comment guifg=darkgray ctermfg=darkgray
 
 " maps ^a to go to beginning of the line, like in terminal
 map <C-a> 0
