@@ -31,6 +31,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Enable indentation preferences and whitespace highlighting (mostly)
 inoremap # X<c-h>#
+" Assume that all 'sh' filetypes are actually bash
+let g:is_bash=1
 set tabstop=4
 set shiftwidth=4
 set smartindent
