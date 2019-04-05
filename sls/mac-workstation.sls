@@ -81,6 +81,24 @@ vimrc:
     - name: {{ HOME }}/.vimrc
     - source: salt://files/vimrc
 
+nvim-config:
+  file.symlink:
+    - user: {{ USER }}
+    - group: admin
+    - name: {{ HOME }}/.config/nvim
+    - target: {{ HOME }}/.vim
+    - require:
+      - file: config
+
+nvimrc:
+  file.symlink:
+    - user: {{ USER }}
+    - group: admin
+    - name: {{ HOME }}/.config/nvim/init.vim
+    - target: {{ HOME }}/.vimrc
+    - require:
+      - file: nvim-config
+
 pathogen:
   git.latest:
     - name: https://github.com/tpope/vim-pathogen
@@ -113,13 +131,6 @@ vim-go:
     - require:
       - file: pathogen-bundle-dir
 
-vim-markdown:
-  git.latest:
-    - name: https://github.com/tpope/vim-markdown
-    - target: {{ HOME }}/.vim/bundle/vim-markdown
-    - require:
-      - file: pathogen-bundle-dir
-
 supertab:
   git.latest:
     - name: https://github.com/ervandew/supertab
@@ -140,24 +151,6 @@ vim-better-whitespace:
     - target: {{ HOME }}/.vim/bundle/vim-better-whitespace
     - require:
       - file: pathogen-bundle-dir
-
-nvim-config:
-  file.symlink:
-    - user: {{ USER }}
-    - group: admin
-    - name: {{ HOME }}/.config/nvim
-    - target: {{ HOME }}/.vim
-    - require:
-      - file: config
-
-nvimrc:
-  file.symlink:
-    - user: {{ USER }}
-    - group: admin
-    - name: {{ HOME }}/.config/nvim/init.vim
-    - target: {{ HOME }}/.vimrc
-    - require:
-      - file: nvim-config
 
 #####################
 # ZSH:
