@@ -165,6 +165,7 @@ epoch-converter () {
 export GOPATH="$HOME/ws/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
+export GO111MODULE=on
 
 # Prepend gnubin path for replacing BSD utils with GNU utils and local gem dir
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

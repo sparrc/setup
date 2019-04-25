@@ -229,3 +229,11 @@ cookbook:
     - require:
       - file: repositories
 
+auto-ecs:
+  git.latest:
+    - name: git@github.com:sparrc/auto-ecs.git
+    - target: {{ HOME }}/ws/repos/auto-ecs
+    - branch: master
+    - require:
+      - file: repositories
+
