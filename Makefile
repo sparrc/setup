@@ -9,7 +9,7 @@ salt:
 	salt-call --config-dir=./config state.sls sls.mac-workstation
 
 go:
-	./install_go.sh 1.12.2
+	./install_go.sh 1.12.4
 
 ruby:
 	rbenv install --skip-existing 2.5.3
