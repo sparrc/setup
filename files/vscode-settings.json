@@ -55,6 +55,7 @@
   },
   "workbench.iconTheme": "vs-seti",
   "window.zoomLevel": -0.25,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "go.useLanguageServer": true
 }
 
