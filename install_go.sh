@@ -19,8 +19,8 @@ else
 
     echo "Removing all traces of previous Go version"
     sudo rm -rf "/usr/local/go"
-    rm -rf "$GOPATH/bin"
-    rm -rf "$GOPATH/pkg"
+    sudo rm -rf "$GOPATH/bin"
+    sudo rm -rf "$GOPATH/pkg"
 
     open "/tmp/go.pkg"
     echo "Installed successfully, recommended next steps:"

@@ -13,7 +13,7 @@
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "boundary",
   "editor.folding": true,
   "editor.selectionHighlight": true,
   "editor.fontFamily": "Source Code Pro",
@@ -55,7 +55,6 @@
   },
   "workbench.iconTheme": "vs-seti",
   "window.zoomLevel": -0.25,
-  "editor.minimap.enabled": false,
-  "go.useLanguageServer": true
+  "editor.minimap.enabled": false
 }
 
