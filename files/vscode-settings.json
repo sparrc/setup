@@ -42,6 +42,22 @@
     "references": false,
     "runtest": false
   },
+  // GO LANGUAGE SERVER SETTINGS
+  // see https://github.com/golang/go/wiki/gopls
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true, // add parameter placeholders when completing a function
+    "wantCompletionDocumentation": true // for documentation in completion items
+  },
+  "files.eol": "\n", // formatting only supports LF line endings
+  // GO LANGUAGE SERVER SETTINGS
   "workbench.colorTheme": "Afterglow",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.shell.osx": "/bin/bash",
