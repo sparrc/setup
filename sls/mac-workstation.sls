@@ -19,6 +19,11 @@ jq:
     - name: {{ HOME }}/.jq
     - source: salt://files/jq
 
+terminal-profile:
+  file.managed:
+    - name: {{ HOME }}/.sparrc.terminal
+    - source: salt://files/sparrc.terminal
+
 bash_profile:
   file.managed:
     - name: {{ HOME }}/.bash_profile

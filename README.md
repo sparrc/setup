@@ -29,7 +29,6 @@ Spotify, VLC, Slack.
     - GPG Suite
     - Kaleidoscope (and ksdiff)
 
-1. Import Terminal profile from ~/gd/appsync/sparrc.terminal
 
 ## Instructions:
 
@@ -77,6 +76,7 @@ first press cmd+shift+P, then:
 
         %admin  ALL=(ALL) NOPASSWD: ALL
 
+8. Import Terminal profile from ~/.sparrc.terminal
 
 
 ## gpg instructions:
