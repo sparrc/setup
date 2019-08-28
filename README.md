@@ -19,7 +19,6 @@ Spotify, VLC, Slack.
 
 1. Clone this repo.
 1. Install homebrew http://brew.sh/
-1. echo "username: $(whoami)" > ./config/grains
 1. Get .secrets files from 1password and copy to home directory.
 1. Generate a new SSH key and add to github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 1. Install:
