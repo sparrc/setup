@@ -7,27 +7,22 @@
     Mission Control    -> Dashboard                   -> Off
     Dock               -> Automatically hide and show -> On
     Dock               -> Minimize windows using...   -> Scale Effect
-    Trackpad           -> Scroll & zoom               -> Direction: Natural -> Off
     Trackpad           -> Tap Click                   -> On
     Sharing            -> Computer Name (and Edit...) -> ...
 
-#### Suggested apps:
-
-Spotify, VLC, Slack.
-
 #### PRE-REQs:
 
+1. Generate a new SSH key and add to github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 1. Clone this repo.
 1. Install homebrew http://brew.sh/
 1. Get .secrets files from 1password and copy to home directory.
-1. Generate a new SSH key and add to github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 1. Install:
 
     - 1Password
     - VS Code
+    - Sublime Text
     - GPG Suite
     - Kaleidoscope (and ksdiff)
-
 
 ## Instructions:
 
@@ -42,16 +37,11 @@ Spotify, VLC, Slack.
 
 3. run salt state
 
-        salt-call --config-dir=./config state.sls sls.mac-workstation
+        make salt
 
 4. change default shell to zsh:
 
         chsh -s /bin/zsh
-
-5. install [Sublime Package Control](https://packagecontrol.io/installation)
-package and then install these:
-
-        Theme - Afterglow
 
 6. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go)
 and install extensions & shell command:
