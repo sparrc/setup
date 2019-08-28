@@ -69,7 +69,7 @@
   "files.exclude": {
     "**/*.pyc": true
   },
-  "workbench.iconTheme": "vs-seti",
+  "workbench.iconTheme": "vscode-icons",
   "window.zoomLevel": -0.25,
   "editor.minimap.enabled": false
 }
