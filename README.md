@@ -70,7 +70,7 @@ first press cmd+shift+P, then:
 
 ## gpg instructions:
 
-1. Install [GPG Suite](https://gpgtools.org/) and gpg-agent (brew install gpg-agent)
+1. Install [GPG Suite](https://gpgtools.org/)
 
 2. Import personal GPG key. Download .asc file from 1Password and open
 with GPG Suite. Set Ownertrust of key to 'Ultimate'
