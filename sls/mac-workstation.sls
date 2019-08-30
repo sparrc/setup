@@ -242,3 +242,9 @@ auto-ecs:
     - require:
       - file: repositories
 
+s3sync:
+  git.latest:
+    - name: git@github.com:sparrc/s3sync.git
+    - target: {{ HOME }}/.s3sync
+    - branch: master
+
