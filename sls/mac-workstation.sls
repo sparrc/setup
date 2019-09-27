@@ -29,6 +29,11 @@ bash_profile:
     - name: {{ HOME }}/.bash_profile
     - source: salt://files/bash_profile
 
+warprc:
+  file.prepend:
+    - name: {{ HOME }}/.warprc
+    - source: salt://files/warprc
+
 config:
   file.directory:
     - name: {{ HOME }}/.config
