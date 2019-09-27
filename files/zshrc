@@ -42,20 +42,21 @@ HISTSIZE=7500                                      # lines of history to keep in
 SAVEHIST=30000                                     # lines of history to save to file
 HISTORY_IGNORE="(history|ls|pwd|exit|ll|la|clear)" # commands history ignores
 
-setopt APPEND_HISTORY           # append
+# History options:
 setopt HIST_IGNORE_DUPS         # no duplicate
 setopt HIST_IGNORE_ALL_DUPS     # no duplicate
 setopt HIST_REDUCE_BLANKS       # trim blanks
-setopt SHARE_HISTORY            # share hist between sessions
-setopt HIST_IGNORE_SPACE        # ignore commands prefixed by a space
-setopt HIST_NO_STORE            # dont store dupes
-setopt BANG_HIST                # !keyword
-setopt NO_BEEP                  # no terminal beeps
 setopt HIST_SAVE_NO_DUPS        # more de-duping
 setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_FIND_NO_DUPS
-setopt INTERACTIVECOMMENTS      # recognize comments on cli
-setopt NO_COMPLETE_ALIASES      # autocomplete aliases, this seems to do the opposite of what it sounds like
+setopt SHARE_HISTORY            # share hist between sessions
+setopt INC_APPEND_HISTORY       # append
+setopt BANG_HIST                # !keyword
+setopt NO_BEEP                  # no terminal beeps
+
+setopt AUTO_CD              # Use '~/Desktop' as shorthand for 'cd ~/Desktop'
+setopt ALWAYS_TO_END        # Accepting auto-completion puts cursor at end of line, never runs
+setopt INTERACTIVECOMMENTS  # recognize comments on cli
+setopt NO_COMPLETE_ALIASES  # autocomplete aliases, this seems to do the opposite of what it sounds like
 
 # completion
 zstyle ':completion:*' menu select
