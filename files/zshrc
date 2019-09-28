@@ -37,10 +37,10 @@ add-zsh-hook periodic gstat
 # prompt format
 PROMPT="%{$fg[blue]%}%4d%{$fg[green]%}%1v%{$fg[red]%}%2v%{$fg_bold[red]%} %# %{$reset_color%}"
 
-HISTFILE=~/.zsh_history                            # where to store zsh config
-HISTSIZE=7500                                      # lines of history to keep in mem
-SAVEHIST=30000                                     # lines of history to save to file
-HISTORY_IGNORE="(history|ls|pwd|exit|ll|la|clear)" # commands history ignores
+export HISTFILE=~/.zsh_history                            # where to store zsh config
+export HISTSIZE=7500                                      # lines of history to keep in mem
+export SAVEHIST=30000                                     # lines of history to save to file
+export HISTORY_IGNORE="(history|ls|pwd|exit|ll|la|clear|*AWS_SECRET*|*AWS_ACCESS*)" # commands history ignores
 
 # History options:
 setopt HIST_IGNORE_DUPS         # no duplicate
