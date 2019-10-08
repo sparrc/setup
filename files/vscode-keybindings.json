@@ -1,11 +1,15 @@
 [
   {
-    "key": "ctrl+.",
-    "command": "workbench.action.navigateForward"
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
-    "key": "ctrl+,",
-    "command": "workbench.action.navigateBack"
+    "key": "cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "workbench.files.action.showActiveFileInExplorer"
   },
   {
     "key": "ctrl+]",
@@ -24,14 +28,6 @@
     "command": "workbench.action.previousEditor"
   },
   {
-    "key": "shift+cmd+]",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "shift+cmd+[",
-    "command": "workbench.action.previousEditor"
-  },
-  {
     "key": "ctrl+enter",
     "command": "editor.action.goToDeclaration",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -40,40 +36,6 @@
     "key": "ctrl+shift+enter",
     "command": "editor.action.previewDeclaration",
     "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "editor.action.goToDeclaration",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "cmd+shift+enter",
-    "command": "editor.action.previewDeclaration",
-    "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-  },
-  {
-    "key": "alt+space",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "alt+b",
-    "command": "git.branch"
-  },
-  {
-    "key": "alt+c",
-    "command": "git.checkout"
-  },
-  {
-    "key": "alt+cmd+b",
-    "command": "workbench.files.action.showActiveFileInExplorer"
-  },
-  {
-    "key": "alt+cmd+f",
-    "command": "editor.foldLevel1"
-  },
-  {
-    "key": "alt+cmd+u",
-    "command": "editor.unfoldAll"
   },
   {
     "key": "ctrl+f",
@@ -90,9 +52,5 @@
   {
     "key": "ctrl+p",
     "command": "workbench.action.showCommands"
-  },
-  {
-    "key": "alt+cmd+p",
-    "command": "projectManager.listProjectsNewWindow"
   }
 ]
