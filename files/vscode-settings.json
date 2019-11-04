@@ -54,6 +54,7 @@
     "**/*.pyc": true
   },
   "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": -0.25,
   "editor.minimap.enabled": false
 }
