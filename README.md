@@ -26,9 +26,7 @@
 
 ## Instructions:
 
-1. install saltstack:
-
-        brew install saltstack
+1. install saltstack [https://repo.saltstack.com/](https://repo.saltstack.com/)
 
 2. make and chown the salt directories:
 
