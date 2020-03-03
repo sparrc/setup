@@ -1,7 +1,6 @@
 {
     "auto_complete_commit_on_tab": true,
     "bold_folder_labels": true,
-    "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
     "enable_tab_scrolling": false,
     "ensure_newline_at_eof_on_save": true,
     "font_face": "Source Code Pro",
@@ -19,7 +18,6 @@
     "save_on_focus_lost": true,
     "show_full_path": true,
     "tabs_medium": true,
-    "theme": "Afterglow.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "ui_scale": 1.1,
