@@ -1,5 +1,5 @@
 
-default: brew salt ruby python go
+default: brew salt go
 
 brew:
 	brew update
@@ -11,23 +11,3 @@ salt:
 go:
 	./install_go.sh 1.12.15
 
-ruby:
-	rbenv install --skip-existing 2.5.3
-	rbenv global 2.5.3
-	gem install bundler
-	gem install rubocop
-
-# might need to set CFLAGS for this to work, see
-# https://github.com/pyenv/pyenv/wiki/Common-build-problems
-python:
-	pyenv install --skip-existing 2.7.15
-	pyenv install --skip-existing 3.7.4
-	pyenv global 2.7.15
-	pip install -q --upgrade pip
-	pip install -q --upgrade ipython
-	pip install -q --upgrade yapf
-	pyenv global 3.7.4
-	pip install -q --upgrade pip
-	pip install -q --upgrade ipython
-	pip install -q --upgrade black
-	pip install -q --upgrade yapf

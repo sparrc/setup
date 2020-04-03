@@ -8,7 +8,7 @@
                      ripgrep jq rpl neovim colordiff rbenv tree
                      speedtest_cli shellcheck lolcat pigz pyenv
                      youtube-dl bash-completion findutils grep
-                     rsync less")
+                     rsync less xz gnu-sed")
 %}
 
 brew-packages:
