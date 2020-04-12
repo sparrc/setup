@@ -52,5 +52,15 @@
   {
     "key": "ctrl+p",
     "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
   }
 ]

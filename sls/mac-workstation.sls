@@ -137,7 +137,7 @@ vim-go:
   git.latest:
     - name: https://github.com/fatih/vim-go
     - target: {{ HOME }}/.vim/bundle/vim-go
-    - force_fetch: true
+    - rev: v1.22
     - require:
       - file: pathogen-bundle-dir
 
