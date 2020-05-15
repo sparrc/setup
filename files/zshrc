@@ -6,10 +6,10 @@
 
 # warp directory (https://github.com/mfaerevaag/wd)
 wd () {
-    . $HOME/ws/repos/wd/wd.sh
+    . $HOME/ws/repos/wd-zsh/wd.sh
 }
 # warp directory completions:
-fpath=($HOME/ws/repos/wd $fpath)
+fpath=($HOME/ws/repos/wd-zsh $fpath)
 # zsh completions from homebrew:
 if [ -d /usr/local/share/zsh/site-functions ]; then
     . /usr/local/share/zsh/site-functions

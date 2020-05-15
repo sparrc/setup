@@ -44,7 +44,7 @@
   },
   "workbench.colorTheme": "Afterglow",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shell.osx": "/bin/bash",
   "window.title": "${rootName}",
   "python.formatting.provider": "black",
   "python.linting.enabled": false,

@@ -2,6 +2,9 @@
 
 force_color_prompt=yes
 
+# bash warp directory
+source ~/ws/repos/wd-bash/wd
+
 # use bash completion if available:
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion # most linux distros have this by default
@@ -38,6 +41,13 @@ export HISTSIZE=7500
 export HISTCONTROL=ignoredups # Ignore duplicates, ls without options and builtin commands
 export HISTIGNORE="history:ls:pwd:exit:ll:la:clear"
 export HISTTIMEFORMAT="%b %d %R " # Timestamp the history entries
+
+# Key bindings, up/down arrow searches through history
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\e0A": history-search-backward'
+bind '"\e0B": history-search-forward'
+
 
 # Cross-shell settings:
 source ~/.rc

@@ -223,10 +223,18 @@ gopath:
 # GIT REPOS
 #####################
 
-wd:
+wd-zsh:
   git.latest:
     - name: git@github.com:mfaerevaag/wd.git
-    - target: {{ HOME }}/ws/repos/wd
+    - target: {{ HOME }}/ws/repos/wd-zsh
+    - branch: master
+    - require:
+      - file: repositories
+
+wd-bash:
+  git.latest:
+    - name: git@github.com:troyxmccall/wd.git
+    - target: {{ HOME }}/ws/repos/wd-bash
     - branch: master
     - require:
       - file: repositories
