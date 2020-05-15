@@ -29,6 +29,13 @@ bash_profile:
     - name: {{ HOME }}/.bash_profile
     - source: salt://files/bash_profile
 
+bashrc:
+  file.symlink:
+    - name: {{ HOME }}/.bashrc
+    - target: {{ HOME }}/.bash_profile
+    - require:
+      - file: bash_profile
+
 warprc:
   file.prepend:
     - name: {{ HOME }}/.warprc
