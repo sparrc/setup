@@ -9,8 +9,9 @@ source ~/ws/repos/wd-bash/wd
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion # most linux distros have this by default
 fi
-if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion # this is where homebrew on macos installs it.
+# homebrew bash-completion formula location:
+if [ -f /usr/local/etc/profile.d/bash_completion.sh ]; then
+    . /usr/local/etc/profile.d/bash_completion.sh
 fi
 
 # Basic prompt:
@@ -38,8 +39,8 @@ fancy_prompt
 shopt -s histappend
 export HISTFILESIZE=100000
 export HISTSIZE=7500
-export HISTCONTROL=ignoredups # Ignore duplicates, ls without options and builtin commands
-export HISTIGNORE="history:ls:pwd:exit:ll:la:clear"
+export HISTCONTROL=ignoredups # Ignore duplicates
+export HISTIGNORE="history:ls:pwd:exit:ll:la:clear" # Ignore some basic commands
 export HISTTIMEFORMAT="%b %d %R " # Timestamp the history entries
 
 # Key bindings, up/down arrow searches through history
@@ -47,7 +48,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e0A": history-search-backward'
 bind '"\e0B": history-search-forward'
-
 
 # Cross-shell settings:
 source ~/.rc

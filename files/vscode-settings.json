@@ -42,6 +42,7 @@
     "references": false,
     "runtest": false
   },
+  "go.useGoProxyToCheckForToolUpdates": false,
   "workbench.colorTheme": "Afterglow",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.shell.osx": "/bin/bash",
