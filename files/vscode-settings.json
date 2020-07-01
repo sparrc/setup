@@ -29,7 +29,6 @@
   },
   "go.buildOnSave": "off",
   "go.lintOnSave": "off",
-  "go.vetOnSave": "workspace",
   "go.buildTags": "",
   "go.buildFlags": [],
   "go.lintFlags": [],

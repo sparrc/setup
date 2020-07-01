@@ -6,7 +6,7 @@
 
 # warp directory (https://github.com/mfaerevaag/wd)
 wd () {
-    . $HOME/ws/repos/wd-zsh/wd.sh
+    . "$HOME/ws/repos/wd-zsh/wd.sh"
 }
 # warp directory completions:
 fpath=($HOME/ws/repos/wd-zsh $fpath)
@@ -22,18 +22,25 @@ typeset -U PATH # no dupes in PATH
 
 export PATH="$HOME/gd/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 
-gstat () {
-    if test -d ".git"; then
-        psvar[1]=" `git rev-parse --abbrev-ref HEAD`"
-        psvar[2]=`git diff-index --quiet HEAD -- || echo "*"`
+git-branch-precmd () {
+    if [ -d ".git" ]; then
+        psvar[1]=" $(git rev-parse --abbrev-ref HEAD)"
     else
         psvar[1]=""
+    fi
+}
+git-status-periodic () {
+    if [ -d ".git" ]; then
+        psvar[2]="$(git diff-index --quiet HEAD -- || echo "*")"
+    else
         psvar[2]=""
     fi
 }
-# get git meta-information periodically, every 1s
-PERIOD=1
-add-zsh-hook periodic gstat
+# get git metadata
+PERIOD=2
+add-zsh-hook periodic git-status-periodic
+add-zsh-hook precmd git-branch-precmd
+
 # prompt format
 PROMPT="%{$fg[blue]%}%4d%{$fg[green]%}%1v%{$fg[red]%}%2v%{$fg_bold[red]%} %# %{$reset_color%}"
 
@@ -66,10 +73,10 @@ bindkey '\e[B' history-beginning-search-forward
 bindkey '\e[3~' delete-char # 'forward' delete key
 
 # Cross-shell settings:
-source ~/.rc
+source "$HOME/.rc"
 
 # Secrets:
-source ~/.secrets
+source "$HOME/.secrets"
 
 # Amazon:
-source ~/.amazonrc
+source "$HOME/.amazonrc"

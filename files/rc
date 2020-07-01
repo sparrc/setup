@@ -116,16 +116,13 @@ jq-format () {
     echo "$TMP" > "$1"
 }
 
-# wk finds a directory with the given name
-wk () {
-    for d in $(echo "$HOME/ws/go/src $HOME/ws $HOME/gd/ws"); do
-        m=$(find $d -maxdepth 3 -type d | grep "/${1}$")
-        if [[ "$m" != "" ]]; then
-            cd "$m"
-            return
-        fi
+# gocheck
+gocheck () {
+    echo "Running go vet and staticcheck on changed packages"
+    for d in $(git ls-files -m | grep "\.go" | grep -v "/vendor/" | xargs dirname | uniq); do
+        echo "checking $d"
+        go vet "./$d/." #&& staticcheck "./$d/."
     done
-    echo "Project $1 not found"
 }
 
 # python setup

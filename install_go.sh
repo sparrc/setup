@@ -24,7 +24,9 @@ else
 
     open "/tmp/go.pkg"
     echo "Installed successfully, recommended next steps:"
-    echo "  Install glide: go get github.com/Masterminds/glide"
     echo "  Run 'Go: Install/Update tools' in VSCode"
+    echo "  Install go tools:"
+    echo "    go get -u github.com/golang/dep/cmd/dep"
+    echo "    go get honnef.co/go/tools/..."
 fi
 
