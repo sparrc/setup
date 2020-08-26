@@ -9,5 +9,5 @@ salt:
 	salt-call --config-dir=./config state.sls sls.mac-workstation
 
 go:
-	./install_go.sh 1.14.3
+	./install_go.sh 1.15
 
