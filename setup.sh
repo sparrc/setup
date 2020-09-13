@@ -26,11 +26,11 @@ manage-git-repo "git@github.com:troyxmccall/wd.git" "$HOME/ws/repos/wd-bash" &
 manage-git-repo "git@github.com:sparrc/cookbook.git" "$HOME/ws/repos/cookbook" &
 manage-git-repo "git@github.com:sparrc/auto-ecs.git" "$HOME/ws/repos/auto-ecs" &
 manage-git-repo "git@github.com:sparrc/s3sync.git" "$HOME/.s3sync" &
+manage-git-repo "https://github.com/tpope/vim-pathogen" "$HOME/.vim" &
 
 wait;
 
 manage-symlink "$HOME/.bashrc" "$HOME/.bash_profile"
-manage-git-repo "https://github.com/tpope/vim-pathogen" "$HOME/.vim"
 manage-dirs "$HOME/.vim/bundle" "$HOME/.vim/colors"
 manage-file "./files/Solarized.vim" "$HOME/.vim/colors/Solarized.vim"
 manage-symlink "$HOME/.config/nvim" "$HOME/.vim"

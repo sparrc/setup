@@ -10,6 +10,9 @@ function manage-dirs {
 }
 
 function install-pkg {
+    if which "$1" &>/dev/null; then
+        return
+    fi
     if ! brew list "$1" --quiet &> /dev/null; then
         echo "...Installing $1"
         brew install "$1"
