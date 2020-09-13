@@ -48,14 +48,22 @@ function manage-symlink {
 }
 
 function manage-git-repo {
-    echo "Checking if git repo $1 is managed"
+    echo "Checking if git repo $1 ($2) is managed"
     if [ ! -d "$2" ]; then
         mkdir -p "$2"
-        git clone "$1" "$2/."
+        git clone "$1" "$2/." --quiet
+        cd "$2"
+        echo "...Cloned git repo $1 ($2), sha=$(git rev-parse HEAD)"
+        cd - &>/dev/null
     else
         cd "$2"
         git fetch --all --prune --quiet
+        startSHA=$(git rev-parse HEAD)
         git pull --quiet
+        endSHA=$(git rev-parse HEAD)
+        if [ "$startSHA" != "$endSHA" ]; then
+            echo "...Updated git repo $1 ($2) $startSHA -> $endSHA"
+        fi
         cd - &>/dev/null
     fi
 }
