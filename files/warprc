@@ -1,9 +1,0 @@
-salt:~/ws/salt
-gopath:~/ws/go
-s3:~/s3
-auto-ecs:~/ws/repos/auto-ecs
-cookbook:~/ws/repos/cookbook
-repos:~/ws/repos
-init:~/ws/go/src/github.com/aws/amazon-ecs-init
-agent:~/ws/go/src/github.com/aws/amazon-ecs-agent
-brazil:~/ws/amzn

@@ -26,22 +26,12 @@
 
 ## Instructions:
 
-1. install saltstack [https://repo.saltstack.com/](https://repo.saltstack.com/)
-
-2. make and chown the salt directories:
-
-        sudo mkdir -p /etc/salt /var/cache/salt /var/log/salt /var/run/salt
-        sudo chown -R sparrc /etc/salt /var/cache/salt /var/log/salt /var/run/salt
-
-3. run salt state
-
-        make salt
-
-4. change default shell to zsh:
+1. Run `make`
+2. change default shell to zsh:
 
         chsh -s /bin/zsh
 
-6. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go)
+3. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go)
 and install extensions & shell command:
 
 first press cmd+shift+P, then:
@@ -50,12 +40,10 @@ first press cmd+shift+P, then:
         ext install Afterglow theme
         ext install vscode-icons
         ext install Active File Status
-        ext install ruby-rubocop
         ext install Project Manager
-        ext install Cucumber (gherkin) syntax
         Shell Command: install 'code'
 
-7. sudo NOPASSWD sudo configuration, run `sudo visudo` and then change this line:
+4. sudo NOPASSWD sudo configuration, run `sudo visudo` and then change this line:
 
         %admin  ALL=(ALL) ALL
 
@@ -63,7 +51,7 @@ first press cmd+shift+P, then:
 
         %admin  ALL=(ALL) NOPASSWD: ALL
 
-8. Import Terminal profile from ~/.sparrc.terminal
+5. Import Terminal profile from ~/.sparrc.terminal
 
 
 ## gpg instructions:
