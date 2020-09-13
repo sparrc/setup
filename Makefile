@@ -1,5 +1,5 @@
 
-default: brew salt go
+default: setup brew salt go
 
 brew:
 	brew update
@@ -10,4 +10,7 @@ salt:
 
 go:
 	./install_go.sh 1.15
+
+setup:
+	./setup.sh
 
