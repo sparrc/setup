@@ -3,8 +3,8 @@ function manage-dirs {
     do
         echo "Checking if directory $dir is managed"
         if [ ! -d "$dir" ]; then
-            echo "...Creating directory $dir"
             mkdir -p "$dir"
+            echo "...Created directory $dir"
         fi
     done
 }
@@ -14,8 +14,8 @@ function install-pkg {
         return
     fi
     if ! brew list "$1" --quiet &> /dev/null; then
-        echo "...Installing $1"
         brew install "$1"
+        echo "...Installed $1"
     fi
 }
 
@@ -32,12 +32,13 @@ function manage-file {
     echo "Checking if file $2 is managed"
     mkdir -p "$(dirname "$2")"
     if [ ! -f "$2" ]; then
-        echo "...Creating $2"
         cp "$1" "$2"
+        echo "...Created $2"
         return
     fi
     if ! diff --unified "$2" "$1"; then
         cp "$1" "$2"
+        echo "...Updated $2"
     fi
 }
 
@@ -45,8 +46,8 @@ function manage-symlink {
     echo "Checking if symlink $1 -> $2 is managed"
     mkdir -p "$(dirname "$2")"
     if [ ! -f "$2" ] && [ ! -d "$2" ]; then
-        echo "...Creating symlink $1 -> $2"
         ln -s "$2" "$1"
+        echo "...Created symlink $1 -> $2"
     fi
 }
 
