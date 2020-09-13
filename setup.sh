@@ -21,8 +21,6 @@ manage-file "./files/zshrc" "$HOME/.zshrc" &
 manage-file "./files/vscode-settings.json" "$HOME/Library/Application Support/Code/User/settings.json" &
 manage-file "./files/vscode-keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json" &
 manage-file "./files/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings" &
-
-manage-symlink "$HOME/.bashrc" "$HOME/.bash_profile"
 manage-git-repo "git@github.com:mfaerevaag/wd.git" "$HOME/ws/repos/wd-zsh" &
 manage-git-repo "git@github.com:troyxmccall/wd.git" "$HOME/ws/repos/wd-bash" &
 manage-git-repo "git@github.com:sparrc/cookbook.git" "$HOME/ws/repos/cookbook" &
@@ -31,6 +29,7 @@ manage-git-repo "git@github.com:sparrc/s3sync.git" "$HOME/.s3sync" &
 
 wait;
 
+manage-symlink "$HOME/.bashrc" "$HOME/.bash_profile"
 manage-git-repo "https://github.com/tpope/vim-pathogen" "$HOME/.vim"
 manage-dirs "$HOME/.vim/bundle" "$HOME/.vim/colors"
 manage-file "./files/Solarized.vim" "$HOME/.vim/colors/Solarized.vim"
