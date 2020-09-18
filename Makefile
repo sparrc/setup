@@ -1,5 +1,5 @@
 
-default: setup brew go
+default: update setup brew go
 
 brew:
 	brew update
@@ -10,4 +10,8 @@ go:
 
 setup:
 	./setup.sh
+
+update:
+	git fetch origin
+	git pull
 
