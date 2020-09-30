@@ -12,10 +12,10 @@
 
 ### Prereqs:
 
-1. Generate a new SSH key and add to github
-
-        ssh-keygen -t rsa -b 2048 -C "email@example.com" -f ~/.ssh/id_rsa_github
-
+1. Generate a new SSH key for github access and add to github (https://github.com/settings/keys)
+```
+ssh-keygen -t rsa -b 2048 -C "email@example.com" -f ~/.ssh/id_rsa_github -N ""
+```
 2. Clone this repo.
 3. Install homebrew http://brew.sh/
 4. Get .secrets files from 1password and copy to home directory.
@@ -31,18 +31,18 @@
 
 1. Run `make`
 2. change default shell to zsh:
-
-        chsh -s /bin/zsh
-
+```
+chsh -s /bin/zsh
+```
 3. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go) and install extensions & shell command. First press cmd+shift+P, then:
-
-        ext install Go
-        ext install Afterglow theme
-        ext install vscode-icons
-        ext install Active File Status
-        ext install Project Manager
-        Shell Command: install 'code'
-
+```
+ext install Go
+ext install Afterglow theme
+ext install vscode-icons
+ext install Active File Status
+ext install Project Manager
+Shell Command: install 'code'
+```
 4. sudo NOPASSWD sudo configuration, run `sudo visudo` and then change this line:
 
         %admin  ALL=(ALL) ALL
