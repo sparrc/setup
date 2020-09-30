@@ -10,9 +10,13 @@ function manage-dirs {
 }
 
 function install-pkg {
-    if which "$1" &>/dev/null; then
+    if [ -x "$(command -v "$1")" ]; then
         return
     fi
+    if [ -d "/usr/local/Cellar/$1" ]; then
+        return
+    fi
+    echo "...package $1 not found, checking brew"
     if ! brew list "$1" --quiet &> /dev/null; then
         brew install "$1"
         echo "...Installed $1"
