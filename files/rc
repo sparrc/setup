@@ -27,10 +27,13 @@ alias gc='git checkout'
 # amends a change to previous commit
 alias fixup='git status && git commit --all --amend --reuse-message=HEAD'
 # update remotes, checkout master, pull origin onto the master branch
-alias gu='git fetch --all --prune &&
-          git checkout master &&
-          git pull origin master --tags &&
-          git checkout -'
+gu () {
+    tmp="${1:-master}"
+    git fetch --all --prune
+    git checkout "$tmp"
+    git pull origin "$tmp" --tags
+    git checkout -
+}
 
 # shell function to destroy local and remote branch references
 blam () {
