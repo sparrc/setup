@@ -1,6 +1,5 @@
-function manage-dirs {
-    for dir in "$@"
-    do
+function manage-dirs() {
+    for dir in "$@"; do
         echo "Checking if directory $dir is managed"
         if [ ! -d "$dir" ]; then
             mkdir -p "$dir"
@@ -9,7 +8,7 @@ function manage-dirs {
     done
 }
 
-function install-pkg {
+function install-pkg() {
     if [ -x "$(command -v "$1")" ]; then
         return
     fi
@@ -17,22 +16,21 @@ function install-pkg {
         return
     fi
     echo "...package $1 not found, checking brew"
-    if ! brew list "$1" --quiet &> /dev/null; then
+    if ! brew list "$1" --quiet &>/dev/null; then
         brew install "$1"
         echo "...Installed $1"
     fi
 }
 
-function install-packages {
-    for pkg in "$@"
-    do
+function install-packages() {
+    for pkg in "$@"; do
         echo "Checking if $pkg is installed"
         install-pkg "$pkg" &
     done
-    wait;
+    wait
 }
 
-function manage-file {
+function manage-file() {
     echo "Checking if file $2 is managed"
     mkdir -p "$(dirname "$2")"
     if [ ! -f "$2" ]; then
@@ -46,7 +44,7 @@ function manage-file {
     fi
 }
 
-function manage-symlink {
+function manage-symlink() {
     echo "Checking if symlink $1 -> $2 is managed"
     mkdir -p "$(dirname "$2")"
     if [ ! -f "$2" ] && [ ! -d "$2" ]; then
@@ -55,7 +53,7 @@ function manage-symlink {
     fi
 }
 
-function manage-git-repo {
+function manage-git-repo() {
     echo "Checking if git repo $1 ($2) is managed"
     if [ ! -d "$2" ]; then
         mkdir -p "$2"
@@ -75,4 +73,3 @@ function manage-git-repo {
         cd - &>/dev/null
     fi
 }
-

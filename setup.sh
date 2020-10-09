@@ -28,7 +28,7 @@ manage-git-repo "git@github.com:sparrc/auto-ecs.git" "$HOME/ws/repos/auto-ecs" &
 manage-git-repo "git@github.com:sparrc/s3sync.git" "$HOME/.s3sync" &
 manage-git-repo "https://github.com/tpope/vim-pathogen" "$HOME/.vim" &
 
-wait;
+wait
 
 manage-symlink "$HOME/.bashrc" "$HOME/.bash_profile"
 manage-dirs "$HOME/.vim/bundle" "$HOME/.vim/colors"
@@ -40,4 +40,4 @@ manage-git-repo "https://github.com/ervandew/supertab" "$HOME/.vim/supertab" &
 manage-git-repo "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/vim-gitgutter" &
 manage-git-repo "https://github.com/ntpeters/vim-better-whitespace.git" "$HOME/.vim/vim-better-whitespace" &
 
-wait;
+wait
