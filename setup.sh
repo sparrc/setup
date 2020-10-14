@@ -7,7 +7,9 @@ manage-dirs "$HOME/ws/repos" "$HOME/ws/go" "$HOME/Library/Fonts"
 rsync -a "./files/fonts/" "$HOME/Library/Fonts/"
 install-packages git
 
-install-packages shfmt wget tig coreutils zsh cowsay sl unp ripgrep jq rpl neovim colordiff rbenv tree speedtest-cli shellcheck lolcat pigz pyenv youtube-dl bash-completion findutils grep rsync less xz gnu-sed &
+install-packages shfmt wget tig coreutils zsh cowsay sl unp ripgrep jq rpl neovim \
+    colordiff rbenv tree speedtest-cli shellcheck lolcat pigz pyenv youtube-dl \
+    bash-completion findutils grep rsync less xz gnu-sed &
 
 manage-file "./files/rc" "$HOME/.rc" &
 manage-file "./files/jq" "$HOME/.jq" &
