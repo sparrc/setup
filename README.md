@@ -25,12 +25,11 @@ ssh-keygen -t rsa -b 2048 -C "email@example.com" -f ~/.ssh/id_rsa_github -N ""
     - VS Code
     - Sublime Text
     - GPG Suite
-    - Kaleidoscope (and ksdiff)
 
 ### Instructions:
 
 1. Run `make`
-2. change default shell to zsh:
+2. change default shell to zsh (no longer necessary on macOS):
 ```
 chsh -s /bin/zsh
 ```
@@ -43,15 +42,7 @@ ext install Active File Status
 ext install Project Manager
 Shell Command: install 'code'
 ```
-4. sudo NOPASSWD sudo configuration, run `sudo visudo` and then change this line:
-
-        %admin  ALL=(ALL) ALL
-
-    to this:
-
-        %admin  ALL=(ALL) NOPASSWD: ALL
-
-5. Import Terminal profile from ~/.sparrc.terminal
+4. Import Terminal profile from ~/.sparrc.terminal
 
 ### GPG Instructions:
 
