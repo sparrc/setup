@@ -102,7 +102,7 @@ pwgen () {
 
 # GPG encrypt and decrypt helper functions:
 encrypt () {
-    gpg --output "$1.gpg" --encrypt --recipient cameronsparr@gmail.com "$1"
+    gpg --output "$1.gpg" --encrypt --recipient gh@sparr.email "$1"
 }
 decrypt () {
     s=$(echo "$1" | sed "s/.gpg$//")

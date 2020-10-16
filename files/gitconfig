@@ -1,7 +1,7 @@
 [user]
-    email = cameronsparr@gmail.com
+    email = gh@sparr.email
     name = Cam
-    signingkey = DCB25D0F
+    signingkey = EE812B08DF32F58C
 [includeIf "gitdir:~/ws/amzn/**"]
     path = ~/ws/amzn/.gitconfig
 [branch]
