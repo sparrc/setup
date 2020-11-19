@@ -15,11 +15,11 @@ function install-pkg() {
     if [ -d "/usr/local/Cellar/$1" ]; then
         return
     fi
-    echo "...package $1 not found, checking brew"
-    if ! brew list "$1" --quiet &>/dev/null; then
-        brew install "$1"
-        echo "...Installed $1"
+    if brew list "$1" --quiet &>/dev/null; then
+        return
     fi
+    brew install "$1"
+    echo "...Installed $1"
 }
 
 function install-packages() {
