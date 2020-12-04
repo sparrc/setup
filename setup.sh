@@ -27,6 +27,7 @@ manage-git-repo "git@github.com:mfaerevaag/wd.git" "$HOME/ws/repos/wd-zsh" &
 manage-git-repo "git@github.com:troyxmccall/wd.git" "$HOME/ws/repos/wd-bash" &
 manage-git-repo "git@github.com:sparrc/cookbook.git" "$HOME/ws/repos/cookbook" &
 manage-git-repo "git@github.com:sparrc/auto-ecs.git" "$HOME/ws/repos/auto-ecs" &
+manage-git-repo "git@github.com:sparrc/dockerfiles.git" "$HOME/ws/repos/dockerfiles" &
 manage-git-repo "git@github.com:sparrc/s3sync.git" "$HOME/.s3sync" &
 manage-git-repo "https://github.com/tpope/vim-pathogen" "$HOME/.vim" &
 
