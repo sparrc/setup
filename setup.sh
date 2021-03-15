@@ -13,7 +13,7 @@ install-packages shfmt wget tig coreutils zsh cowsay sl unp ripgrep jq rpl neovi
 
 manage-file "./files/rc" "$HOME/.rc" &
 manage-file "./files/jq" "$HOME/.jq" &
-manage-file "./files/sparrc.terminal" "$HOME/.sparrc.terminal" &
+manage-file "./files/sparrc.terminal" "$HOME/sparrc.terminal" &
 manage-file "./files/bash_profile" "$HOME/.bash_profile" &
 manage-file "./files/tigrc" "$HOME/.tigrc" &
 manage-file "./files/gitconfig" "$HOME/.config/git/config" &

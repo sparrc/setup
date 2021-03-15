@@ -9,7 +9,11 @@ if [[ "$version" == "" ]]; then
     exit 0
 fi
 
-installed=$(go version | awk '{ print $3 }' | sed s/go//g)
+if which go; then
+    installed=$(go version | awk '{ print $3 }' | sed s/go//g)
+else
+    installed=""
+fi
 
 if [[ "$installed" == "$version" ]]; then
     echo "Go version $version is already installed."

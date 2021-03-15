@@ -25,9 +25,8 @@ function install-pkg() {
 function install-packages() {
     for pkg in "$@"; do
         echo "Checking if $pkg is installed"
-        install-pkg "$pkg" &
+        install-pkg "$pkg"
     done
-    wait
 }
 
 function manage-file() {

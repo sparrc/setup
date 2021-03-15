@@ -4,11 +4,12 @@
 
     Security & Privacy -> Filevault                   -> On
     Mission Control    -> Automatically re-arrange    -> Off
-    Mission Control    -> Dashboard                   -> Off
     Dock               -> Automatically hide and show -> On
     Dock               -> Minimize windows using...   -> Scale Effect
     Trackpad           -> Tap Click                   -> On
     Sharing            -> Computer Name (and Edit...) -> ...
+    Keyboard           -> Key Repeat                  -> Fast
+    Keyboard           -> Delay Until Repeat          -> Short
 
 ### Prereqs:
 
@@ -42,7 +43,7 @@ ext install Active File Status
 ext install Project Manager
 Shell Command: install 'code'
 ```
-4. Import Terminal profile from ~/.sparrc.terminal
+4. Import Terminal profile from ~/sparrc.terminal
 
 ### GPG Instructions:
 
