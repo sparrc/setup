@@ -38,9 +38,9 @@ manage-dirs "$HOME/.vim/bundle" "$HOME/.vim/colors"
 manage-file "./files/Solarized.vim" "$HOME/.vim/colors/Solarized.vim"
 manage-symlink "$HOME/.config/nvim" "$HOME/.vim"
 manage-symlink "$HOME/.config/nvim/init.vim" "$HOME/.vimrc"
-manage-git-repo "https://github.com/fatih/vim-go" "$HOME/.vim/vim-go" &
-manage-git-repo "https://github.com/ervandew/supertab" "$HOME/.vim/supertab" &
-manage-git-repo "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/vim-gitgutter" &
-manage-git-repo "https://github.com/ntpeters/vim-better-whitespace.git" "$HOME/.vim/vim-better-whitespace" &
+manage-git-repo "https://github.com/fatih/vim-go" "$HOME/.vim/bundle/vim-go" &
+manage-git-repo "https://github.com/ervandew/supertab" "$HOME/.vim/bundle/supertab" &
+manage-git-repo "https://github.com/airblade/vim-gitgutter" "$HOME/.vim/bundle/vim-gitgutter" &
+manage-git-repo "https://github.com/ntpeters/vim-better-whitespace.git" "$HOME/.vim/bundle/vim-better-whitespace" &
 
 wait
