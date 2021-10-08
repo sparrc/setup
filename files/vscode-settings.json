@@ -41,10 +41,9 @@
     "references": false,
     "runtest": false
   },
-  "go.useGoProxyToCheckForToolUpdates": false,
+  "go.toolsManagement.checkForUpdates": "off",
   "workbench.colorTheme": "Afterglow",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.shell.osx": "/bin/bash",
   "window.title": "${rootName}",
   "python.formatting.provider": "black",
   "python.linting.enabled": false,
@@ -55,8 +54,14 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
-  "window.zoomLevel": -0.25,
   "editor.minimap.enabled": false,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "go.toolsManagement.autoUpdate": true,
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true,
+  "ruby.format": "rufo",
+  "[ruby]": {
+    "editor.formatOnSave": true
+  }
 }
 
