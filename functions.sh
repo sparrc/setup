@@ -62,9 +62,10 @@ function manage-git-repo() {
         cd - &>/dev/null
     else
         cd "$2"
-        if ! git fetch --all --prune --quiet; then echo "FAILED TO FETCH: $1"; fi
+        if ! git diff --exit-code &>/dev/null; then echo "...Skipping $1 because it has unstaged changes"; return; fi
+        if ! git fetch --all --prune --quiet; then echo "ERROR: failed to fetch $1"; return; fi
         startSHA=$(git rev-parse HEAD)
-        if ! git pull --quiet; then echo "FAILED TO PULL: $1"; fi
+        if ! git pull --quiet; then echo "ERROR: failed to pull $1"; return; fi
         endSHA=$(git rev-parse HEAD)
         if [ "$startSHA" != "$endSHA" ]; then
             echo "...Updated git repo $1 ($2) $startSHA -> $endSHA"

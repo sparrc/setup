@@ -128,8 +128,19 @@ gocheck () {
     done
 }
 
+# macOS sets default open file limit to 256, raise it to 1000
+ULIMIT=$(ulimit -n)
+if (( $ULIMIT < 1000 )); then
+    ulimit -n 1000
+fi
+
 # python setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+pyenv install 3.8.10 --skip-existing
+pyenv global 3.8.10
 
 # ruby setup
 eval "$(rbenv init -)"
