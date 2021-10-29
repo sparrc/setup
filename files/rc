@@ -139,8 +139,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-pyenv install 3.8.10 --skip-existing
-pyenv global 3.8.10
 
 # ruby setup
 eval "$(rbenv init -)"
