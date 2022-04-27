@@ -4,16 +4,6 @@
 # GIT
 #
 
-# print the github URL of the current repo
-gh () {
-    url=$(git remote -v | grep origin | head -n 1 | awk '{ print $2 }')
-    if [[ "$url" =~ "git@github" ]]; then
-        echo "$url" | sed 's/^git@github.com:/https:\/\/github.com\//g' | sed 's/\.git$//g'
-    else
-        echo "$url"
-    fi
-}
-
 # pipe the git diff to color diff for nicer viewing
 alias gd='git diff | colordiff'
 # displays the current HEAD commit
@@ -97,7 +87,9 @@ alias flip-two-tables='echo "┻━┻︵ \(°□°)/ ︵┻━┻"'
 alias randomdata='dd if=/dev/zero bs=1M count=1k 2>/dev/null | openssl enc -rc4-40 -pass pass:weak'
 pwgen () {
     length="${1:-20}"
-    head -c300 /dev/urandom | tr -dc 'A-Za-z0-9\.\?\-\_\!\$' | head -c "$length" | pbcopy
+    local pw=$(head -c300 /dev/urandom | tr -dc 'A-Za-z0-9\.\?\-\_' | head -c "$length")
+    echo "$pw"
+    printf "$pw" | pbcopy
 }
 
 # GPG encrypt and decrypt helper functions:
