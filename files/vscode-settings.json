@@ -19,7 +19,11 @@
   "editor.fontFamily": "Source Code Pro",
   "editor.fontSize": 14,
   "editor.lineHeight": 19,
-  "editor.quickSuggestions": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
   "editor.suggestOnTriggerCharacters": true,
   "editor.stablePeek": true,
   "files.trimTrailingWhitespace": true,
@@ -62,6 +66,9 @@
   "ruby.format": "rufo",
   "[ruby]": {
     "editor.formatOnSave": true
-  }
+  },
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "off"
 }
 
