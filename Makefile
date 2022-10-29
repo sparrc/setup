@@ -6,7 +6,7 @@ brew:
 	brew upgrade
 
 go:
-	./install_go.sh 1.17.2
+	./install_go.sh 1.19.1
 
 setup:
 	./setup.sh
