@@ -15,7 +15,7 @@
 
 1. Generate a new SSH key for github access and add to github (https://github.com/settings/keys)
 ```
-ssh-keygen -t rsa -b 2048 -C "email@example.com" -f ~/.ssh/id_rsa_github -N ""
+ssh-keygen -t ecdsa -C "email@example.com" -f ~/.ssh/id_ecdsa_github -N ""
 ```
 2. Clone this repo.
 3. Install homebrew http://brew.sh/
