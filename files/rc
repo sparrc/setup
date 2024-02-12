@@ -162,6 +162,14 @@ epoch-converter () {
     date -d "@${seconds}" "+%F %T %Z"
 }
 
+# bash function to launch chatgpt container with history
+# see github.com/sparrc/chatgpt
+chatgpt () {
+    touch "$HOME/.chatgpt_history"
+    docker run --name chatgpt --rm --mount type=bind,source="$HOME/.chatgpt_history",target="/.chatgpt_history" --interactive --env "OPENAI_API_KEY=$OPENAI_API_KEY" chatgpt
+}
+
+
 # GO:
 export GOPATH="$HOME/ws/go"
 export GOBIN="$GOPATH/bin"
