@@ -8,7 +8,7 @@ rsync -a "./files/fonts/" "$HOME/Library/Fonts/"
 install-packages git
 
 install-packages shfmt wget tig coreutils zsh cowsay sl unp ripgrep jq rpl neovim \
-    colordiff rbenv tree speedtest-cli shellcheck lolcat pigz pyenv youtube-dl \
+    colordiff rbenv tree speedtest-cli shellcheck lolcat pigz pyenv \
     bash-completion findutils grep rsync less xz gnu-sed sd fd &
 
 manage-file "./files/rc" "$HOME/.rc" &
