@@ -14,12 +14,14 @@ if which go; then
 else
     installed=""
 fi
+installed=""
 
 if [[ "$installed" == "$version" ]]; then
     echo "Go version $version is already installed."
     exit 0
 else
-    wget "https://dl.google.com/go/go${version}.darwin-amd64.pkg" -O "/tmp/go.pkg"
+    ARCH=$(uname -m)
+    wget "https://dl.google.com/go/go${version}.darwin-$ARCH.pkg" -O "/tmp/go.pkg"
 
     echo "Removing all traces of previous Go version"
     sudo rm -rf "/usr/local/go"
