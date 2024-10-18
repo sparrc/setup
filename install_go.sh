@@ -14,7 +14,6 @@ if which go; then
 else
     installed=""
 fi
-installed=""
 
 if [[ "$installed" == "$version" ]]; then
     echo "Go version $version is already installed."
