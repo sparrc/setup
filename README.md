@@ -2,7 +2,6 @@
 
 ### Preferences to Set:
 
-    Security & Privacy -> Filevault                   -> On
     Mission Control    -> Automatically re-arrange    -> Off
     Dock               -> Automatically hide and show -> On
     Dock               -> Minimize windows using...   -> Scale Effect
@@ -10,6 +9,7 @@
     Sharing            -> Computer Name (and Edit...) -> ...
     Keyboard           -> Key Repeat                  -> Fast
     Keyboard           -> Delay Until Repeat          -> Short
+    Control Center     -> Sound                       -> Always Show In Menu Bar
 
 ### Prereqs:
 
