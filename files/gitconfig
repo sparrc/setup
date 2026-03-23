@@ -19,7 +19,7 @@
     lineNumber = true
 [core]
     editor = nvim
-    pager = less -FMRiX
+    pager = cat
 [push]
     default = simple
 [log]

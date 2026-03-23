@@ -9,8 +9,6 @@ filetype plugin indent on
 set hlsearch
 " Always display status line
 set laststatus=2
-" Disable autoindent with Ctrl-p for pasting (insert mode only)
-set pastetoggle=<C-P>
 " toggle line number and git gutter with Ctrl-g (for c&p)
 nnoremap <C-G> :set nonumber! <bar> :GitGutterToggle <CR>
 " unset the "last search pattern" register by hitting return
