@@ -22,6 +22,11 @@ else
     ARCH=$(uname -m)
     wget "https://dl.google.com/go/go${version}.darwin-$ARCH.pkg" -O "/tmp/go.pkg"
 
+    if [[ -z "${GOPATH:-}" ]]; then
+        echo "ERROR: GOPATH is not set. Please set GOPATH before running this script."
+        exit 1
+    fi
+
     echo "Removing all traces of previous Go version"
     sudo rm -rf "/usr/local/go"
     sudo rm -rf "$GOPATH/bin"
@@ -31,6 +36,5 @@ else
     echo "Installed successfully, recommended next steps:"
     echo "  Run 'Go: Install/Update tools' in VSCode"
     echo "  Install go tools:"
-    echo "    go get -u github.com/golang/dep/cmd/dep"
-    echo "    go get honnef.co/go/tools/..."
+    echo "    go install honnef.co/go/tools/cmd/staticcheck@latest"
 fi

@@ -34,14 +34,27 @@ ssh-keygen -t ed25519 -C "email@example.com" -f ~/.ssh/id_ed25519_github -N ""
 ```
 chsh -s /bin/zsh
 ```
-3. For VS Code, [install dependencies](https://github.com/Microsoft/vscode-go) and install extensions & shell command. First press cmd+shift+P, then:
+3. Install VS Code extensions. Either press cmd+shift+P and use `ext install`:
 ```
 ext install Go
-ext install Afterglow theme
-ext install vscode-icons
-ext install Active File Status
-ext install Project Manager
-Shell Command: install 'code'
+ext install Python
+ext install Black Formatter
+ext install Pylance
+ext install Remote - SSH
+ext install Emoji
+ext install Active File In StatusBar
+ext install rust-analyzer
+```
+Or install from the CLI:
+```
+code --install-extension golang.go
+code --install-extension ms-python.python
+code --install-extension ms-python.black-formatter
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension perkovec.emoji
+code --install-extension roscop.activefileinstatusbar
+code --install-extension rust-lang.rust-analyzer
 ```
 4. Import Terminal profile from ~/sparrc.terminal
 

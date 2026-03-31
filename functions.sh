@@ -45,7 +45,7 @@ function manage-file() {
 
 function manage-symlink() {
     echo "Checking if symlink $1 -> $2 is managed"
-    mkdir -p "$(dirname "$2")"
+    mkdir -p "$(dirname "$1")"
     if [ ! -f "$1" ] && [ ! -d "$1" ]; then
         ln -s "$2" "$1"
         echo "...Created symlink $1 -> $2"

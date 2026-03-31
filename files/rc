@@ -156,12 +156,6 @@ ruby-reinstall-all-versions () {
   done
 }
 
-epoch-converter () {
-    seconds=$(echo "${1}" | head -c10)
-    date -d "@${seconds}" "+%F %T %Z" --utc
-    date -d "@${seconds}" "+%F %T %Z"
-}
-
 # bash function to launch chatgpt container with history
 # see github.com/sparrc/chatgpt
 chatgpt () {
