@@ -129,11 +129,6 @@ fi
 # python setup
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-# ruby setup
-eval "$(rbenv init -)"
 
 # Uninstalls all ruby gems for all rbenv versions
 ruby-uninstall-all-gems () {
