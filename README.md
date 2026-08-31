@@ -26,6 +26,7 @@ ssh-keygen -t ed25519 -C "email@example.com" -f ~/.ssh/id_ed25519_github -N ""
     - VS Code
     - Sublime Text
     - GPG Suite
+    - iTerm2
 
 ### Instructions:
 
@@ -57,6 +58,7 @@ code --install-extension roscop.activefileinstatusbar
 code --install-extension rust-lang.rust-analyzer
 ```
 4. Import Terminal profile from ~/sparrc.terminal
+5. Import iTerm2 profile from ~/iTerm2-Default.json
 
 ### GPG Instructions:
 
