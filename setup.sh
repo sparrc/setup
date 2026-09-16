@@ -21,7 +21,7 @@ manage-file "./files/gitconfig" "$HOME/.config/git/config" &
 manage-file "./files/gitignore" "$HOME/.config/git/ignore" &
 manage-file "./files/vimrc" "$HOME/.vimrc" &
 manage-file "./files/zshrc" "$HOME/.zshrc" &
-manage-file "./files/vscode-settings.json" "$HOME/Library/Application Support/Code/User/settings.json" &
+#manage-file "./files/vscode-settings.json" "$HOME/Library/Application Support/Code/User/settings.json" &
 manage-file "./files/vscode-keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json" &
 manage-file "./files/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings" &
 manage-git-repo "git@github.com:mfaerevaag/wd.git" "$HOME/ws/repos/wd-zsh" &
