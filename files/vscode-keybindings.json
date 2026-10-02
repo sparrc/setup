@@ -68,11 +68,11 @@
     "command": "-workbench.action.toggleAuxiliaryBar"
   },
   {
-    "key": "alt+cmd+b",
+    "key": "cmd+i",
     "command": "workbench.action.toggleAuxiliaryBar"
   },
   {
-    "key": "alt+cmd+n",
+    "key": "alt+cmd+i",
     "command": "workbench.action.maximizeAuxiliaryBar"
   }
 ]
