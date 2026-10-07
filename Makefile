@@ -1,5 +1,5 @@
 
-default: setup brew go
+default: setup brew
 
 brew:
 	brew update
