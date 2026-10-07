@@ -4,6 +4,7 @@ default: setup brew
 brew:
 	brew update
 	brew upgrade
+	brew cleanup
 
 go:
 	./install_go.sh 1.26.0
